@@ -17,7 +17,9 @@
 					background: rgba(0,255,0,0.2);
 					border-radius: 15px 15px 0px 0px;
 				}
-
+        .subtitulo{
+          border-bottom: 1px solid black;
+        }
 			</style>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -71,7 +73,7 @@
                     <div class="caja-header">
                       <p class="flow-text center">Potencial de Calentamiento Global<strong>(GWP)</strong>:</p>
                     </div>
-                    <div class="caja">
+                    <div class="col row s12 caja">
                       <div class="input-field s12">
                         <input id="CO2" type="text" placeholder="1" class="validate" required>
                         <label for="CO2">CO<sub>2</sub></label>
@@ -103,7 +105,7 @@
                 <div class="caja-header">
                   <p class="flow-text center">Factor de emisión de <strong>combustibles</strong>:</p>
                 </div>
-                <div class="caja">
+                <div class="col row s12 caja">
                   <div class="input-field s12">
                     <input id="gasNatural" type="text" placeholder="2.537" class="validate" required>
                     <label for="gasNatural">Gas Natural KgCO<sub>2e</sub>/ NM<sup>3</sup></label>
@@ -118,7 +120,7 @@
                 <div class="caja-header">
                   <p class="flow-text center">Factor de emisión para el <strong>transporte</strong>:</p>
                 </div>
-                <div class="caja">
+                <div class="col row s12 caja">
                   <div class="input-field s12">
                     <input id="gasolina98_95" type="text" placeholder="2.38" class="validate" required>
                     <label for="gasNatural">Gasolina 98 o 95 KgCO<sub>2</sub>/ litro</label>
@@ -129,14 +131,14 @@
                   </div>
                 </div>
               </div>
-              <div class="col s12">
+              <div class="col row s12">
                 <div class="caja-header">
                   <p class="flow-text center">Emisiones en turismos:</p>
+                  <small class="center">Nota: Emisiones en función del tipo de recorrido (g CO<sub>2</sub>/km)</small>
                 </div>
-                <div class="caja">
+                <div class="col row s12 caja">
                   <div class="row s12">
-                    <p class="flow-text center"><strong>Gasolina</strong>:</p>
-                    <hr>
+                    <p class="flow-text center subtitulo"><strong>Gasolina</strong>:</p>
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Urbano</strong></p>
                       <div class="input-field s12">
@@ -163,7 +165,7 @@
                         <label for="gasolinaRural1.4-2.011">1.4 - 2.011</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaRural>2.011" type="text" placeholder="192.85" class="validate" required>
+                        <input id="gasolinaRural>2.011" type="text" placeholder="191.85" class="validate" required>
                         <label for="gasolinaRural>2.011">&gt; 2.011</label>
                       </div>
                     </div>
@@ -184,83 +186,306 @@
                     </div>
                   </div>
                   <div class="row s12">
-                    <p class="flow-text center"><strong>Diésel</strong>:</p>
+                    <p class="flow-text center subtitulo"><strong>Diésel</strong>:</p>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Urbano</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselUrbano<21" type="text" placeholder="2.38" class="validate" required>
+                        <input id="dieselUrbano<21" type="text" placeholder="199.81" class="validate" required>
                         <label for="dieselUrbano<21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselUrbano>21" type="text" placeholder="2.38" class="validate" required>
+                        <input id="dieselUrbano>21" type="text" placeholder="246.06" class="validate" required>
                         <label for="dieselUrbano>21">&gt;21</label>
                       </div>
                     </div>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Rural</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselRural<21" type="text" placeholder="2.38" class="validate" required>
+                        <input id="dieselRural<21" type="text" placeholder="135.56" class="validate" required>
                         <label for="dieselRural<21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselRural>21" type="text" placeholder="2.38" class="validate" required>
+                        <input id="dieselRural>21" type="text" placeholder="170.51" class="validate" required>
                         <label for="dieselRural>21">&gt;21</label>
                       </div>
                     </div>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Interurbano</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselUrbano<21" type="text" placeholder="2.38" class="validate" required>
+                        <input id="dieselUrbano<21" type="text" placeholder="157.73" class="validate" required>
                         <label for="dieselUrbano<21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselUrbano>21" type="text" placeholder="2.38" class="validate" required>
+                        <input id="dieselUrbano>21" type="text" placeholder="198.71" class="validate" required>
                         <label for="dieselUrbano>21">&gt;21</label>
                       </div>
                     </div>
                   </div>
                   <div class="row s12">
-                    <p class="flow-text center"><strong>Híbrido</strong>:</p>
-                    
-                    
+                    <p class="flow-text center subtitulo"><strong>Híbrido</strong>:</p>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Urbano</strong></p>
                       <div class="input-field s12">
-                        <input id="CualquieraUrbano" type="text" placeholder="2.38" class="validate" required>
+                        <input id="CualquieraUrbano" type="text" placeholder="103.43" class="validate" required>
                         <label for="CualquieraUrbano">Cualquiera</label>
                       </div>
                     </div>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Rural</strong></p>
                       <div class="input-field s12">
-                        <input id="CualquieraRural" type="text" placeholder="2.38" class="validate" required>
+                        <input id="CualquieraRural" type="text" placeholder="100.13" class="validate" required>
                         <label for="CualquieraRural">Cualquiera</label>
                       </div>
                     </div>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Interurbano</strong></p>
                       <div class="input-field s12">
-                        <input id="CualquieraInterurbano" type="text" placeholder="2.38" class="validate" required>
+                        <input id="CualquieraInterurbano" type="text" placeholder="127.29" class="validate" required>
                         <label for="CualquieraInterurbano">Cualquiera</label>
                       </div>
                     </div>
-                  </div>
-                  
-
-                  
-                  
-                  
-                  
-
-                  
-
-                 
-
-                  
-
-                  
+                  </div>                  
                 </div>
               </div>
+              <div class="col row s12">
+                <div class="caja-header">
+                  <p class="flow-text center">Camión, camioneta y furgoneta:</p>
+                  <small class="center">Nota: Emisiones en función del tipo de recorrido (g CO<sub>2</sub>/km)</small>
+                </div>
+                <div class="col row s12 caja">
+                  <div class="row s12">
+                    <p class="flow-text center subtitulo"><strong>Camión diésel</strong>:</p>
+                    <p class="flow-text subtitulo"><strong><small>Rigido</small></strong></p>
+
+                    <div class="col row s4 l4">
+                      <p class="flow-text"><strong>Urbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="rigidoUrbano(14t" type="text" placeholder="539.70" class="validate" required>
+                        <label for="rigidoUrbano(14t">( 14 t</label>
+                      </div>
+                      <div class="input-field s12">
+                        <input id="rigidoUrbano>14t" type="text" placeholder="1103.49" class="validate" required>
+                        <label for="rigidoUrbano>14t">&gt;14 t</label>
+                      </div>
+                    </div>
+                    <div class="col row s4 l4">
+                      <p class="flow-text"><strong>Rural</strong></p>
+                      <div class="input-field s12">
+                        <input id="rigidoRural(14t" type="text" placeholder="394.98" class="validate" required>
+                        <label for="rigidoRural(14t">( 14 t</label>
+                      </div>
+                      <div class="input-field s12">
+                        <input id="rigidoRural>14t" type="text" placeholder="717.04" class="validate" required>
+                        <label for="rigidoRural>14t">&gt; 14 t</label>
+                      </div>
+                    </div>
+                    <div class="col row s4 l4">
+                      <p class="flow-text"><strong>Interurbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="rigidoInterurbano(14t" type="text" placeholder="490.73" class="validate" required>
+                        <label for="rigidoInterurbano(14t">( 14 t</label>
+                      </div>
+                      <div class="input-field s12">
+                        <input id="rigidoInterurbano>14t" type="text" placeholder="663.01" class="validate" required>
+                        <label for="rigidoInterurbano>14t">&gt; 14 t</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row s12">
+                    <p class="flow-text subtitulo"><strong><small>Articulado</small></strong>:</p>
+                   <div class="col row s4 l4">
+                     <p class="flow-text"><strong>Urbano</strong></p>
+                     <div class="input-field s12">
+                       <input id="articuladoUrbano(34t" type="text" placeholder="1011.06" class="validate" required>
+                       <label for="articuladoUrbano(34t">( 34 t</label>
+                     </div>
+                     <div class="input-field s12">
+                       <input id="articuladoUrbano>34t" type="text" placeholder="1506.13" class="validate" required>
+                       <label for="articuladoUrbano>34t">&gt; 34 t</label>
+                     </div>
+                   </div>
+                   <div class="col row s4 l4">
+                     <p class="flow-text"><strong>Rural</strong></p>
+                     <div class="input-field s12">
+                       <input id="articuladoRural(34t" type="text" placeholder="646.96" class="validate" required>
+                       <label for="articuladoRural(34t">( 34 t</label>
+                     </div>
+                     <div class="input-field s12">
+                       <input id="articuladoRural>34t" type="text" placeholder="947.43" class="validate" required>
+                       <label for="articuladoRural>34t">&gt; 34 t</label>
+                     </div>
+                   </div>
+                   <div class="col row s4 l4">
+                     <p class="flow-text"><strong>Interurbano</strong></p>
+                     <div class="input-field s12">
+                       <input id="articuladoInterurbano(34t" type="text" placeholder="579.96" class="validate" required>
+                       <label for="articuladoInterurbano(34t">( 34 t</label>
+                     </div>
+                     <div class="input-field s12">
+                       <input id="articuladoInterurbano>34t" type="text" placeholder="791.44" class="validate" required>
+                       <label for="articuladoInterurbano>34t">&gt; 34 t</label>
+                     </div>
+                   </div>
+                  </div>
+                  <div class="col row s12">
+                    <hr>
+                    <p class="flow-text center"><strong>Ligero</strong>:</p>
+                    <p class="flow-text subtitulo"><strong><small>Gasolina</small></strong>:</p>
+                    <div class="col row s4">
+                      <p class="flow-text"><strong>Urbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="CualquieraUrbanoGasolina" type="text" placeholder="365.27" class="validate" required>
+                        <label for="CualquieraUrbanoGasolina">Cualquiera</label>
+                      </div>
+                    </div>
+                    <div class="col row s4">
+                      <p class="flow-text"><strong>Rural</strong></p>
+                      <div class="input-field s12">
+                        <input id="CualquieraRuralGasolina" type="text" placeholder="207.32" class="validate" required>
+                        <label for="CualquieraRuralGasolina">Cualquiera</label>
+                      </div>
+                    </div>
+                    <div class="col row s4">
+                      <p class="flow-text"><strong>Interurbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="CualquieraInterurbanoGasolina" type="text" placeholder="220.36" class="validate" required>
+                        <label for="CualquieraInterurbanoGasolina">Cualquiera</label>
+                      </div>
+                    </div>
+                    <p class="flow-text subtitulo"><strong><small>Diésel</small></strong>:</p>
+                    <div class="col row s4">
+                      <p class="flow-text"><strong>Urbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="CualquieraUrbanoDiesel" type="text" placeholder="287.14" class="validate" required>
+                        <label for="CualquieraUrbanoDiesel">Cualquiera</label>
+                      </div>
+                    </div>
+                    <div class="col row s4">
+                      <p class="flow-text"><strong>Rural</strong></p>
+                      <div class="input-field s12">
+                        <input id="CualquieraRuralDiesel" type="text" placeholder="194.74" class="validate" required>
+                        <label for="CualquieraRuralDiesel">Cualquiera</label>
+                      </div>
+                    </div>
+                    <div class="col row s4">
+                      <p class="flow-text"><strong>Interurbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="CualquieraInterurbanoDiesel" type="text" placeholder="282.47" class="validate" required>
+                        <label for="CualquieraInterurbanoDiesel">Cualquiera</label>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+              <div class="col row s12">
+                <div class="caja-header">
+                  <p class="flow-text center">Motocicleta:</p>
+                  <small class="center">Nota: Emisiones en función del tipo de recorrido (g CO<sub>2</sub>/km)</small>
+                </div>
+                <div class="col row s12 caja">
+                  <div class="row s12">
+                    <p class="flow-text center subtitulo"><strong>2 tiempos&lt;250CM<sup>3</sup></strong>:</p>
+
+                    <div class="col row s4 l4">
+                      <p class="flow-text"><strong>Urbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="2tiemposUrbano" type="text" placeholder="105.22" class="validate" required>
+                        <label for="2tiemposUrbano">2 tiempos &lt; 250CM<sup>3</sup></label>
+                      </div>
+                    </div>
+                    <div class="col row s4 l4">
+                      <p class="flow-text"><strong>Rural</strong></p>
+                      <div class="input-field s12">
+                        <input id="2tiemposRural" type="text" placeholder="82.78" class="validate" required>
+                        <label for="2tiemposRural">2 tiempos &lt; 250CM<sup>3</sup></label>
+                      </div>
+                    </div>
+                    <div class="col row s4 l4">
+                      <p class="flow-text"><strong>Interurbano</strong></p>
+                      <div class="input-field s12">
+                        <input id="2tiemposInterurbano" type="text" placeholder="124.73" class="validate" required>
+                        <label for="2tiemposInterurbano">2 tiempos &lt; 250CM<sup>3</sup></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row s12">
+                      <p class="flow-text center subtitulo"><strong>4 tiempos&lt;250CM<sup>3</sup></strong>:</p>
+
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Urbano</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos<250Urbano" type="text" placeholder="83.03" class="validate" required>
+                          <label for="4tiempos<250Urbano">4 tiempos &lt; 250CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Rural</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos<250Rural" type="text" placeholder="77.86" class="validate" required>
+                          <label for="4tiempos<250Rural">4 tiempos &lt; 250CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Interurbano</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos<250Interurbano" type="text" placeholder="108.35" class="validate" required>
+                          <label for="4tiempos<250Interurbano">4 tiempos &lt; 250CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row s12">
+                      <p class="flow-text center subtitulo"><strong>4 tiempos 250-750CM<sup>3</sup></strong>:</p>
+
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Urbano</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos250-750Urbano" type="text" placeholder="134.71" class="validate" required>
+                          <label for="4tiempos250-750Urbano">4 tiempos 250-750CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Rural</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos250-750Rural" type="text" placeholder="104.23" class="validate" required>
+                          <label for="4tiempos250-750Rural">4 tiempos 250-750CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Interurbano</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos250-750Interurbano" type="text" placeholder="134.99" class="validate" required>
+                          <label for="4tiempos250-750Interurbano">4 tiempos 250-750CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row s12">
+                      <p class="flow-text center subtitulo"><strong>4 tiempos &gt;750CM<sup>3</sup></strong>:</p>
+
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Urbano</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos>750Urbano" type="text" placeholder="169.37" class="validate" required>
+                          <label for="4tiempos>750Urbano">4 tiempos &gt;750CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Rural</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos>750Rural" type="text" placeholder="122.91" class="validate" required>
+                          <label for="4tiempos>750Rural">4 tiempos &gt;750CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                      <div class="col row s4 l4">
+                        <p class="flow-text"><strong>Interurbano</strong></p>
+                        <div class="input-field s12">
+                          <input id="4tiempos>750Interurbano" type="text" placeholder="146.40" class="validate" required>
+                          <label for="4tiempos>750Interurbano">4 tiempos &gt;750CM<sup>3</sup></label>
+                        </div>
+                      </div>
+                  </div>                  
+                </div>
+              </div>
+
               <div class="row">
                 <div class="input-field col s12">
                   <input id="password" type="password" class="validate">
