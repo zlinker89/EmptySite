@@ -40,8 +40,8 @@
                 </div>
                 <div class="caja">
 	                <div class="input-field s12">
-	                  <input id="papel" type="text" class="validate" placeholder="3" required>
-	                    <label for="papel">Factor de emision del papel comun (KgCO<sub>2</sub>/kg)</label>
+	                  <input id="papelcomun" type="text" class="validate" placeholder="3" required>
+	                    <label for="papelcomun">Factor de emision del papel comun (KgCO<sub>2</sub>/kg)</label>
 	                </div>
 	                <div class="input-field s12">
 	                  <input id="papelreciclado" type="text" class="validate" placeholder="1.8" required>
@@ -123,7 +123,7 @@
                 <div class="col row s12 caja">
                   <div class="input-field s12">
                     <input id="gasolina98_95" type="text" placeholder="2.38" class="validate" required>
-                    <label for="gasNatural">Gasolina 98 o 95 KgCO<sub>2</sub>/ litro</label>
+                    <label for="gasolina98_95">Gasolina 98 o 95 KgCO<sub>2</sub>/ litro</label>
                   </div>
                   <div class="input-field s12">
                     <input id="gasoleoTransporte" type="text" placeholder="2.61" class="validate" required>
@@ -142,8 +142,8 @@
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Urbano</strong></p>
                       <div class="input-field s12">
-                        <input id="gasolinaUrbano<14" type="text" placeholder="192.12" class="validate" required>
-                        <label for="gasolinaUrbano<14">&lt;14</label>
+                        <input id="gasolinaUrbano14" type="text" placeholder="192.12" class="validate" required>
+                        <label for="gasolinaUrbano14">&lt;14</label>
                       </div>
                       <div class="input-field s12">
                         <input id="gasolinaUrbano1.4-2.011" type="text" placeholder="232.78" class="validate" required>
@@ -212,12 +212,12 @@
                     <div class="col row s4">
                       <p class="flow-text"><strong>Interurbano</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselUrbano<21" type="text" placeholder="157.73" class="validate" required>
-                        <label for="dieselUrbano<21">&lt;21</label>
+                        <input id="dieselInterurbano<21" type="text" placeholder="157.73" class="validate" required>
+                        <label for="dieselInterurbano<21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselUrbano>21" type="text" placeholder="198.71" class="validate" required>
-                        <label for="dieselUrbano>21">&gt;21</label>
+                        <input id="dieselInterurbano>21" type="text" placeholder="198.71" class="validate" required>
+                        <label for="dieselInterurbano>21">&gt;21</label>
                       </div>
                     </div>
                   </div>
@@ -485,20 +485,10 @@
                   </div>                  
                 </div>
               </div>
-
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" type="password" class="validate">
-                  <label for="password">password</label>
-                </div>
+              <div class="col row s12 center">
+              	<button type="button" id="enviar" class="btn waves-effect waves-light">Enviar<i class="material-icons right">send</i></button>
+              	<button type="button" id="defecto" class="btn waves-effect waves-light">Default<i class="material-icons right">send</i></button>
               </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Email</label>
-                </div>
-              </div>
-              <button type="button" class="btn waves-effect waves-light"><i class="material-icons right">send</i></button>
             </form>
           </div>
         </div>
@@ -506,51 +496,6 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/indexConfig.js"></script>
     </body>
   </html>
-  <script type="text/javascript">
-  $(document).ready(inicio);
-
-  function inicio () {
-    $(".button-collapse").sideNav();
-    medidas();
-  }
-
-  function medidas(){
-    // conversion en unidades energeticas
-    // termia
-    var termia_kwh = 1.162;
-    var termia_kcal = 1000;
-    var termia_tep = Math.pow(10,-4);
-    var termia_julios = 4186799.94;
-    // kwh
-    var kwh_termia = 0.86;
-    var kwh_kcal = 859.85;
-    var kwh_tep = 8.6 * Math.pow(10,-5);
-    var kwh_julios = 3600000;
-    // kcal
-    var kcal_termia = Math.pow(10,-3);
-    var kcal_kwh = 1.16 * Math.pow(10,-3);
-    var kcal_tep = Math.pow(10,-7);
-    var kcal_julios = 4186.8;
-    // Tep
-    var tep_termia = 10000;
-    var tep_kwh = 11627.9;
-    var tep_kcal = 10000000;
-    var tep_julios = 41867999400;
-    // julios
-    var julios_termia = 2.39 * Math.pow(10,-7);
-    var julios_kwh = 2.78 * Math.pow(10,-7);
-    var julios_kcal = 2.39 * Math.pow(10,-4);
-    var julios_tep = 2.39 * Math.pow(10,-11);
-    // julio - TJ
-    // KWH * KWH_julios / Julios_TJ
-    var julios_TJ = Math.pow(10,12);
-    // NM3 - KWH
-    // NM3/ este
-    var nm3_kwh = 10.7056;
-
-    //alert((1605840 * kwh_julios / julios_TJ).toFixed(2));
-
-  }
-  </script>
