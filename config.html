@@ -2,10 +2,9 @@
   <html>
     <head>
       <meta charset=utf-8>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/iconos.css"/>
 			<style type="text/css">
 				.caja{
 					border:1px solid rgba(0,200,20,0.3);
@@ -32,8 +31,8 @@
           <hr>
         </div>
         <div class="row s12">
-          <div class="row s12">
-            <form class="col row s12">
+          <div class="row s12" id="resultado">
+            <form class="col row s12" id="FormConstantes" method="POST">
               <div class="col s12 l6">
                 <div class="caja-header">
                 	<p class="flow-text center">Factores de emision para el <strong>PAPEL</strong>:</p>
@@ -100,8 +99,8 @@
                       </div>
                   </div>
             </div>
-
-              <div class=" col s12 l6">
+            <div class="col s12">
+              <div class="col s12 l6">
                 <div class="caja-header">
                   <p class="flow-text center">Factor de emisión de <strong>combustibles</strong>:</p>
                 </div>
@@ -116,11 +115,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col s12 l6">
+              <div class="col row s12 l6">
                 <div class="caja-header">
                   <p class="flow-text center">Factor de emisión para el <strong>transporte</strong>:</p>
                 </div>
-                <div class="col row s12 caja">
+                <div class="col s12 caja">
                   <div class="input-field s12">
                     <input id="gasolina98_95" type="text" placeholder="2.38" class="validate" required>
                     <label for="gasolina98_95">Gasolina 98 o 95 KgCO<sub>2</sub>/ litro</label>
@@ -131,6 +130,8 @@
                   </div>
                 </div>
               </div>
+            </div>
+              
               <div class="col row s12">
                 <div class="caja-header">
                   <p class="flow-text center">Emisiones en turismos:</p>
@@ -146,42 +147,42 @@
                         <label for="gasolinaUrbano14">&lt;14</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaUrbano1.4-2.011" type="text" placeholder="232.78" class="validate" required>
-                        <label for="gasolinaUrbano1.4-2.011">1.4 - 2.011</label>
+                        <input id="gasolinaUrbano142011" type="text" placeholder="232.78" class="validate" required>
+                        <label for="gasolinaUrbano142011">1.4 - 2.011</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaUrbano>2.011" type="text" placeholder="310.19" class="validate" required>
-                        <label for="gasolinaUrbano>2.011">&gt; 2.011</label>
+                        <input id="gasolinaUrbano2011" type="text" placeholder="310.19" class="validate" required>
+                        <label for="gasolinaUrbano2011">&gt; 2.011</label>
                       </div>
                     </div>
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Rural</strong></p>
                       <div class="input-field s12">
-                        <input id="gasolinaRural<14" type="text" placeholder="136.90" class="validate" required>
-                        <label for="gasolinaRural<14">&lt;14</label>
+                        <input id="gasolinaRural14" type="text" placeholder="136.90" class="validate" required>
+                        <label for="gasolinaRural14">&lt;14</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaRural1.4-2.011" type="text" placeholder="159.65" class="validate" required>
-                        <label for="gasolinaRural1.4-2.011">1.4 - 2.011</label>
+                        <input id="gasolinaRural142011" type="text" placeholder="159.65" class="validate" required>
+                        <label for="gasolinaRural142011">1.4 - 2.011</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaRural>2.011" type="text" placeholder="191.85" class="validate" required>
-                        <label for="gasolinaRural>2.011">&gt; 2.011</label>
+                        <input id="gasolinaRural2011" type="text" placeholder="191.85" class="validate" required>
+                        <label for="gasolinaRural2011">&gt; 2.011</label>
                       </div>
                     </div>
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Interurbano</strong></p>
                       <div class="input-field s12">
-                        <input id="gasolinaInterurbano<14" type="text" placeholder="154.18" class="validate" required>
-                        <label for="gasolinaInterurbano<14">&lt;14</label>
+                        <input id="gasolinaInterurbano14" type="text" placeholder="154.18" class="validate" required>
+                        <label for="gasolinaInterurbano14">&lt;14</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaInterurbano1.4-2.011" type="text" placeholder="170.99" class="validate" required>
-                        <label for="gasolinaInterurbano1.4-2.011">1.4 - 2.011</label>
+                        <input id="gasolinaInterurbano142011" type="text" placeholder="170.99" class="validate" required>
+                        <label for="gasolinaInterurbano142011">1.4 - 2.011</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="gasolinaInterurbano>2.011" type="text" placeholder="217.95" class="validate" required>
-                        <label for="gasolinaInterurbano>2.011">&gt; 2.011</label>
+                        <input id="gasolinaInterurbano2011" type="text" placeholder="217.95" class="validate" required>
+                        <label for="gasolinaInterurbano2011">&gt; 2.011</label>
                       </div>
                     </div>
                   </div>
@@ -190,34 +191,34 @@
                     <div class="col row s4">
                       <p class="flow-text"><strong>Urbano</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselUrbano<21" type="text" placeholder="199.81" class="validate" required>
-                        <label for="dieselUrbano<21">&lt;21</label>
+                        <input id="dieselUrbano21" type="text" placeholder="199.81" class="validate" required>
+                        <label for="dieselUrbano21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselUrbano>21" type="text" placeholder="246.06" class="validate" required>
-                        <label for="dieselUrbano>21">&gt;21</label>
+                        <input id="dieselUrbanoM21" type="text" placeholder="246.06" class="validate" required>
+                        <label for="dieselUrbanoM21">&gt;21</label>
                       </div>
                     </div>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Rural</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselRural<21" type="text" placeholder="135.56" class="validate" required>
-                        <label for="dieselRural<21">&lt;21</label>
+                        <input id="dieselRural21" type="text" placeholder="135.56" class="validate" required>
+                        <label for="dieselRural21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselRural>21" type="text" placeholder="170.51" class="validate" required>
-                        <label for="dieselRural>21">&gt;21</label>
+                        <input id="dieselRuralM21" type="text" placeholder="170.51" class="validate" required>
+                        <label for="dieselRuralM21">&gt;21</label>
                       </div>
                     </div>
                     <div class="col row s4">
                       <p class="flow-text"><strong>Interurbano</strong></p>
                       <div class="input-field s12">
-                        <input id="dieselInterurbano<21" type="text" placeholder="157.73" class="validate" required>
-                        <label for="dieselInterurbano<21">&lt;21</label>
+                        <input id="dieselInterurbano21" type="text" placeholder="157.73" class="validate" required>
+                        <label for="dieselInterurbano21">&lt;21</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="dieselInterurbano>21" type="text" placeholder="198.71" class="validate" required>
-                        <label for="dieselInterurbano>21">&gt;21</label>
+                        <input id="dieselInterurbanoM21" type="text" placeholder="198.71" class="validate" required>
+                        <label for="dieselInterurbanoM21">&gt;21</label>
                       </div>
                     </div>
                   </div>
@@ -260,34 +261,34 @@
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Urbano</strong></p>
                       <div class="input-field s12">
-                        <input id="rigidoUrbano(14t" type="text" placeholder="539.70" class="validate" required>
-                        <label for="rigidoUrbano(14t">( 14 t</label>
+                        <input id="rigidoUrbano14t" type="text" placeholder="539.70" class="validate" required>
+                        <label for="rigidoUrbano14t">( 14 t</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="rigidoUrbano>14t" type="text" placeholder="1103.49" class="validate" required>
-                        <label for="rigidoUrbano>14t">&gt;14 t</label>
+                        <input id="rigidoUrbanoM14t" type="text" placeholder="1103.49" class="validate" required>
+                        <label for="rigidoUrbanoM14t">&gt;14 t</label>
                       </div>
                     </div>
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Rural</strong></p>
                       <div class="input-field s12">
-                        <input id="rigidoRural(14t" type="text" placeholder="394.98" class="validate" required>
-                        <label for="rigidoRural(14t">( 14 t</label>
+                        <input id="rigidoRural14t" type="text" placeholder="394.98" class="validate" required>
+                        <label for="rigidoRural14t">( 14 t</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="rigidoRural>14t" type="text" placeholder="717.04" class="validate" required>
-                        <label for="rigidoRural>14t">&gt; 14 t</label>
+                        <input id="rigidoRuralM14t" type="text" placeholder="717.04" class="validate" required>
+                        <label for="rigidoRuralM14t">&gt; 14 t</label>
                       </div>
                     </div>
                     <div class="col row s4 l4">
                       <p class="flow-text"><strong>Interurbano</strong></p>
                       <div class="input-field s12">
-                        <input id="rigidoInterurbano(14t" type="text" placeholder="490.73" class="validate" required>
-                        <label for="rigidoInterurbano(14t">( 14 t</label>
+                        <input id="rigidoInterurbano14t" type="text" placeholder="490.73" class="validate" required>
+                        <label for="rigidoInterurbano14t">( 14 t</label>
                       </div>
                       <div class="input-field s12">
-                        <input id="rigidoInterurbano>14t" type="text" placeholder="663.01" class="validate" required>
-                        <label for="rigidoInterurbano>14t">&gt; 14 t</label>
+                        <input id="rigidoInterurbanoM14t" type="text" placeholder="663.01" class="validate" required>
+                        <label for="rigidoInterurbanoM14t">&gt; 14 t</label>
                       </div>
                     </div>
                   </div>
@@ -296,34 +297,34 @@
                    <div class="col row s4 l4">
                      <p class="flow-text"><strong>Urbano</strong></p>
                      <div class="input-field s12">
-                       <input id="articuladoUrbano(34t" type="text" placeholder="1011.06" class="validate" required>
-                       <label for="articuladoUrbano(34t">( 34 t</label>
+                       <input id="articuladoUrbano34t" type="text" placeholder="1011.06" class="validate" required>
+                       <label for="articuladoUrbano34t">( 34 t</label>
                      </div>
                      <div class="input-field s12">
-                       <input id="articuladoUrbano>34t" type="text" placeholder="1506.13" class="validate" required>
-                       <label for="articuladoUrbano>34t">&gt; 34 t</label>
+                       <input id="articuladoUrbanoM34t" type="text" placeholder="1506.13" class="validate" required>
+                       <label for="articuladoUrbanoM34t">&gt; 34 t</label>
                      </div>
                    </div>
                    <div class="col row s4 l4">
                      <p class="flow-text"><strong>Rural</strong></p>
                      <div class="input-field s12">
-                       <input id="articuladoRural(34t" type="text" placeholder="646.96" class="validate" required>
-                       <label for="articuladoRural(34t">( 34 t</label>
+                       <input id="articuladoRural34t" type="text" placeholder="646.96" class="validate" required>
+                       <label for="articuladoRural34t">( 34 t</label>
                      </div>
                      <div class="input-field s12">
-                       <input id="articuladoRural>34t" type="text" placeholder="947.43" class="validate" required>
-                       <label for="articuladoRural>34t">&gt; 34 t</label>
+                       <input id="articuladoRuralM34t" type="text" placeholder="947.43" class="validate" required>
+                       <label for="articuladoRuralM34t">&gt; 34 t</label>
                      </div>
                    </div>
                    <div class="col row s4 l4">
                      <p class="flow-text"><strong>Interurbano</strong></p>
                      <div class="input-field s12">
-                       <input id="articuladoInterurbano(34t" type="text" placeholder="579.96" class="validate" required>
-                       <label for="articuladoInterurbano(34t">( 34 t</label>
+                       <input id="articuladoInterurbano34t" type="text" placeholder="579.96" class="validate" required>
+                       <label for="articuladoInterurbano34t">( 34 t</label>
                      </div>
                      <div class="input-field s12">
-                       <input id="articuladoInterurbano>34t" type="text" placeholder="791.44" class="validate" required>
-                       <label for="articuladoInterurbano>34t">&gt; 34 t</label>
+                       <input id="articuladoInterurbanoM34t" type="text" placeholder="791.44" class="validate" required>
+                       <label for="articuladoInterurbanoM34t">&gt; 34 t</label>
                      </div>
                    </div>
                   </div>
@@ -385,23 +386,23 @@
                 <div class="col row s12 caja">
                   <div class="row s12">
                     <p class="flow-text center subtitulo"><strong>2 tiempos&lt;250CM<sup>3</sup></strong>:</p>
-
+                    
                     <div class="col row s4 l4">
-                      <p class="flow-text"><strong>Urbano</strong></p>
+                      <p class="flow-text"><strong>Urbano</strong></p><br>
                       <div class="input-field s12">
                         <input id="2tiemposUrbano" type="text" placeholder="105.22" class="validate" required>
                         <label for="2tiemposUrbano">2 tiempos &lt; 250CM<sup>3</sup></label>
                       </div>
                     </div>
                     <div class="col row s4 l4">
-                      <p class="flow-text"><strong>Rural</strong></p>
+                      <p class="flow-text"><strong>Rural</strong></p><br>
                       <div class="input-field s12">
                         <input id="2tiemposRural" type="text" placeholder="82.78" class="validate" required>
                         <label for="2tiemposRural">2 tiempos &lt; 250CM<sup>3</sup></label>
                       </div>
                     </div>
                     <div class="col row s4 l4">
-                      <p class="flow-text"><strong>Interurbano</strong></p>
+                      <p class="flow-text"><strong>Interurbano</strong></p><br>
                       <div class="input-field s12">
                         <input id="2tiemposInterurbano" type="text" placeholder="124.73" class="validate" required>
                         <label for="2tiemposInterurbano">2 tiempos &lt; 250CM<sup>3</sup></label>
@@ -412,24 +413,24 @@
                       <p class="flow-text center subtitulo"><strong>4 tiempos&lt;250CM<sup>3</sup></strong>:</p>
 
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Urbano</strong></p>
+                        <p class="flow-text"><strong>Urbano</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos<250Urbano" type="text" placeholder="83.03" class="validate" required>
-                          <label for="4tiempos<250Urbano">4 tiempos &lt; 250CM<sup>3</sup></label>
+                          <input id="4tiempos250Urbano" type="text" placeholder="83.03" class="validate" required>
+                          <label for="4tiempos250Urbano">4 tiempos &lt; 250CM<sup>3</sup></label>
                         </div>
                       </div>
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Rural</strong></p>
+                        <p class="flow-text"><strong>Rural</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos<250Rural" type="text" placeholder="77.86" class="validate" required>
-                          <label for="4tiempos<250Rural">4 tiempos &lt; 250CM<sup>3</sup></label>
+                          <input id="4tiempos250Rural" type="text" placeholder="77.86" class="validate" required>
+                          <label for="4tiempos250Rural">4 tiempos &lt; 250CM<sup>3</sup></label>
                         </div>
                       </div>
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Interurbano</strong></p>
+                        <p class="flow-text"><strong>Interurbano</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos<250Interurbano" type="text" placeholder="108.35" class="validate" required>
-                          <label for="4tiempos<250Interurbano">4 tiempos &lt; 250CM<sup>3</sup></label>
+                          <input id="4tiempos250Interurbano" type="text" placeholder="108.35" class="validate" required>
+                          <label for="4tiempos250Interurbano">4 tiempos &lt; 250CM<sup>3</sup></label>
                         </div>
                       </div>
                   </div>
@@ -437,24 +438,24 @@
                       <p class="flow-text center subtitulo"><strong>4 tiempos 250-750CM<sup>3</sup></strong>:</p>
 
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Urbano</strong></p>
+                        <p class="flow-text"><strong>Urbano</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos250-750Urbano" type="text" placeholder="134.71" class="validate" required>
-                          <label for="4tiempos250-750Urbano">4 tiempos 250-750CM<sup>3</sup></label>
+                          <input id="4tiempos250750Urbano" type="text" placeholder="134.71" class="validate" required>
+                          <label for="4tiempos250750Urbano">4 tiempos 250-750CM<sup>3</sup></label>
                         </div>
                       </div>
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Rural</strong></p>
+                        <p class="flow-text"><strong>Rural</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos250-750Rural" type="text" placeholder="104.23" class="validate" required>
-                          <label for="4tiempos250-750Rural">4 tiempos 250-750CM<sup>3</sup></label>
+                          <input id="4tiempos250750Rural" type="text" placeholder="104.23" class="validate" required>
+                          <label for="4tiempos250750Rural">4 tiempos 250-750CM<sup>3</sup></label>
                         </div>
                       </div>
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Interurbano</strong></p>
+                        <p class="flow-text"><strong>Interurbano</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos250-750Interurbano" type="text" placeholder="134.99" class="validate" required>
-                          <label for="4tiempos250-750Interurbano">4 tiempos 250-750CM<sup>3</sup></label>
+                          <input id="4tiempos250750Interurbano" type="text" placeholder="134.99" class="validate" required>
+                          <label for="4tiempos250750Interurbano">4 tiempos 250-750CM<sup>3</sup></label>
                         </div>
                       </div>
                   </div>
@@ -462,32 +463,39 @@
                       <p class="flow-text center subtitulo"><strong>4 tiempos &gt;750CM<sup>3</sup></strong>:</p>
 
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Urbano</strong></p>
+                        <p class="flow-text"><strong>Urbano</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos>750Urbano" type="text" placeholder="169.37" class="validate" required>
-                          <label for="4tiempos>750Urbano">4 tiempos &gt;750CM<sup>3</sup></label>
+                          <input id="4tiempos750Urbano" type="text" placeholder="169.37" class="validate" required>
+                          <label for="4tiempos750Urbano">4 tiempos &gt;750CM<sup>3</sup></label>
                         </div>
                       </div>
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Rural</strong></p>
+                        <p class="flow-text"><strong>Rural</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos>750Rural" type="text" placeholder="122.91" class="validate" required>
-                          <label for="4tiempos>750Rural">4 tiempos &gt;750CM<sup>3</sup></label>
+                          <input id="4tiempos750Rural" type="text" placeholder="122.91" class="validate" required>
+                          <label for="4tiempos750Rural">4 tiempos &gt;750CM<sup>3</sup></label>
                         </div>
                       </div>
                       <div class="col row s4 l4">
-                        <p class="flow-text"><strong>Interurbano</strong></p>
+                        <p class="flow-text"><strong>Interurbano</strong></p><br>
                         <div class="input-field s12">
-                          <input id="4tiempos>750Interurbano" type="text" placeholder="146.40" class="validate" required>
-                          <label for="4tiempos>750Interurbano">4 tiempos &gt;750CM<sup>3</sup></label>
+                          <input id="4tiempos750Interurbano" type="text" placeholder="146.40" class="validate" required>
+                          <label for="4tiempos750Interurbano">4 tiempos &gt;750CM<sup>3</sup></label>
                         </div>
                       </div>
                   </div>                  
                 </div>
               </div>
-              <div class="col row s12 center">
-              	<button type="button" id="enviar" class="btn waves-effect waves-light">Enviar<i class="material-icons right">send</i></button>
-              	<button type="button" id="defecto" class="btn waves-effect waves-light">Default<i class="material-icons right">send</i></button>
+              <div class="row s12 center">
+                <div class="col row s6 m4">
+                  <button type="submit" id="enviar" class="btn waves-effect waves-light green">Enviar<i class="material-icons right">send</i></button>
+                </div>
+                <div class="col row s6 m4">
+                  <button type="button" id="defecto" class="btn waves-effect waves-light  teal darken-4">Default<i class="material-icons right">input</i></button>
+                </div>
+                <div class="col row s6 m4">
+                  <button type="reset" class="btn waves-effect waves-light   red darken-3">Reset<i class="material-icons right">restore</i></button>
+                </div>
               </div>
             </form>
           </div>
@@ -496,6 +504,11 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <!--Mis scripts-->
+      <script type="text/javascript" src="js/valorpordefecto.js"></script>
+      <script type="text/javascript" src="js/guardarDatos.js"></script>
+      <script type="text/javascript" src="js/obtenerDatos.js"></script>
+      <script type="text/javascript" src="js/verificarLocalStorage.js"></script>
       <script type="text/javascript" src="js/indexConfig.js"></script>
     </body>
   </html>

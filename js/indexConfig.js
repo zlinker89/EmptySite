@@ -2,12 +2,192 @@
 
   function inicio () {
     $(".button-collapse").sideNav();
-    medidas();
+    medidas(); // estableco las medidas para convertir
+    verificar(); // verifico si existe informacion constante
 
     //eventos
     $('#defecto').click(valorPorDefecto);
+    $('#FormConstantes').submit(function () {
+      guardar();
+      return false;
+    });
   }
 
+
+  function guardar () {
+    /*
+      creo las constantes y las almaceno en localhost
+    */
+    try{
+      var CONSTANTES = {
+        co2: $("#CO2").val(),
+        ch4: $("#CH4").val(),
+        n2o: $("#N2O").val(),
+        pfc: $("#PFC").val(),
+        hfc: $("#HFC").val(),
+        sf6: $("#SF6").val(),
+        papelcomun: $("#papelcomun").val(),
+        papelreciclado: $("#papelreciclado").val(),
+        co2biomasa: $("#CO2Biomasa").val(),
+        ch4biomasa: $("#CH4Biomasa").val(),
+        n2obiomasa: $("#N2OBiomasa").val(),
+        gasnatural: $('#gasNatural').val(),
+        gasoleo: $('#gasoleo').val(),
+        gasolina98_95: $('#gasolina98_95').val(),
+        gasolinatransporte: $('#gasoleoTransporte').val(),
+        gasolinaurbano14: $('#gasolinaUrbano14').val(),
+        gasolinaurbano142011: $('#gasolinaUrbano142011').val(),
+        gasolinaurbano2011: $('#gasolinaUrbano2011').val(),
+        gasolinarural14: $('#gasolinaRural14').val(),
+        gasolinarural142011: $('#gasolinaRural142011').val(),
+        gasolinarural2011: $('#gasolinaRural2011').val(),
+        gasolinainterurbano14: $('#gasolinaInterurbano14').val(),
+        gasolinainterurbano142011: $('#gasolinaInterurbano142011').val(),
+        gasolinainterurbano2011: $('#gasolinaInterurbano2011').val(),
+        dieselurbano21: $('#dieselUrbano21').val(),
+        dieselurbanom21: $('#dieselUrbanoM21').val(),
+        dieselrural21: $('#dieselRural21').val(),
+        dieselruralm21: $('#dieselRuralM21').val(),
+        dieselinterurbano21: $('#dieselInterurbano21').val(),
+        dieselinterurbanom21: $('#dieselInterurbanoM21').val(),
+        cualquieraurbano: $('#CualquieraUrbano').val(),
+        cualquierarural: $('#CualquieraRural').val(),
+        cualquierainterurbano: $('#CualquieraInterurbano').val(),
+        rigidourbano14t: $('#rigidoUrbano14t').val(),
+        rigidourbanom14t: $('#rigidoUrbanoM14t').val(),
+        rigidorural14t: $('#rigidoRural14t').val(),
+        rigidoruralm14t: $('#rigidoRuralM14t').val(),
+        rigidointerurbano14t: $('#rigidoInterurbano14t').val(),
+        rigidointerurbanom14t: $('#rigidoInterurbanoM14t').val(),
+        articuladourbano34t: $('#articuladoUrbano34t').val(),
+        articuladourbanom34t: $('#articuladoUrbanoM34t').val(),
+        articuladorural34t: $('#articuladoRural34t').val(),
+        articuladoruralm34t: $('#articuladoRuralM34t').val(),
+        articuladointerurbano34t: $('#articuladoInterurbano34t').val(),
+        articuladointerurbanom34t: $('#articuladoInterurbanoM34t').val(),
+        cualquieraurbanogasolina: $('#CualquieraUrbanoGasolina').val(),
+        cualquieraruralgasolina: $('#CualquieraRuralGasolina').val(),
+        cualquierainterurbanogasolina: $('#CualquieraInterurbanoGasolina').val(),
+        cualquieraurbanodiesel: $('#CualquieraUrbanoDiesel').val(),
+        cualquieraruraldiesel: $('#CualquieraRuralDiesel').val(),
+        cualquierainterurbanodiesel: $('#CualquieraInterurbanoDiesel').val(),
+        _2tiemposurbano: $('#2tiemposUrbano').val(),
+        _2tiemposrural: $('#2tiemposRural').val(),
+        _2tiemposinterurbano: $('#2tiemposInterurbano').val(),
+        _4tiempos250urbano: $('#4tiempos250Urbano').val(),
+        _4tiempos250rural: $('#4tiempos250Rural').val(),
+        _4tiempos250interurbano: $('#4tiempos250Interurbano').val(),
+        _4tiempos250750urbano: $('#4tiempos250750Urbano').val(),
+        _4tiempos250750rural: $('#4tiempos250750Rural').val(),
+        _4tiempos250750interurbano: $('#4tiempos250750Interurbano').val(),
+        _4tiempos750urbano: $('#4tiempos750Urbano').val(),
+        _4tiempos750rural: $('#4tiempos750Rural').val(),
+        _4tiempos750interurbano: $('#4tiempos750Interurbano').val()
+      }
+
+      if(validar()){
+        guardarLocalStorage(CONSTANTES); // lo guardamos
+        Materialize.toast('Datos guardados', 3000);
+      }else{
+        Materialize.toast('Solo numeros', 3000);
+      }
+    }catch(e){
+      Materialize.toast('No se ha pudo guardar', 3000);
+      console.log(e);
+    }
+
+    return false; // para que no se vaya a refrescar
+  }
+
+  function verificar () {
+    if (verificarLocalStorage()) {
+      var constantes = obtenerDatos();
+      //GWP
+        $("#CO2").val(constantes.co2);
+        $("#CH4").val(constantes.ch4);
+        $("#N2O").val(constantes.n2o);
+        $("#PFC").val(constantes.pfc);
+        $("#HFC").val(constantes.hfc);
+        $("#SF6").val(constantes.sf6);
+
+        //Papel
+        $("#papelcomun").val(constantes.papelcomun);
+        $("#papelreciclado").val(constantes.papelreciclado);
+
+        // biomasa solida primaria
+        $("#CO2Biomasa").val(constantes.co2biomasa);
+        $("#CH4Biomasa").val(constantes.ch4biomasa);
+        $("#N2OBiomasa").val(constantes.n2obiomasa);
+
+        // combustibles
+        $('#gasNatural').val(constantes.gasnatural);
+        $('#gasoleo').val(constantes.gasoleo);
+
+        // Transporte
+        $('#gasolina98_95').val(constantes.gasolina98_95);
+        $('#gasoleoTransporte').val(constantes.gasolinatransporte); // OJO ACA
+
+        // Turismos
+        // gasolina
+        $('#gasolinaUrbano14').val(constantes.gasolinaurbano14);
+        $('#gasolinaUrbano142011').val(constantes.gasolinaurbano142011);
+        $('#gasolinaUrbano2011').val(constantes.gasolinaurbano2011);
+        $('#gasolinaRural14').val(constantes.gasolinarural14);
+        $('#gasolinaRural142011').val(constantes.gasolinarural142011);
+        $('#gasolinaRural2011').val(constantes.gasolinarural2011);
+        $('#gasolinaInterurbano14').val(constantes.gasolinainterurbano14);
+        $('#gasolinaInterurbano142011').val(constantes.gasolinainterurbano142011);
+        $('#gasolinaInterurbano2011').val(constantes.gasolinainterurbano2011);
+        // diesel
+        $('#dieselUrbano21').val(constantes.dieselurbano21);
+        $('#dieselUrbanoM21').val(constantes.dieselurbanom21);
+        $('#dieselRural21').val(constantes.dieselrural21);
+        $('#dieselRuralM21').val(constantes.dieselruralm21);
+        $('#dieselInterurbano21').val(constantes.dieselinterurbano21);
+        $('#dieselInterurbanoM21').val(constantes.dieselinterurbanom21);
+        // Hibrido
+        $('#CualquieraUrbano').val(constantes.cualquieraurbano);
+        $('#CualquieraRural').val(constantes.cualquierarural);
+        $('#CualquieraInterurbano').val(constantes.cualquierainterurbano);
+
+        // Camion, camioneta y furgoneta
+        // Camion diesel 
+        $('#rigidoUrbano14t').val(constantes.rigidourbano14t);
+        $('#rigidoUrbanoM14t').val(constantes.rigidourbanom14t);
+        $('#rigidoRural14t').val(constantes.rigidorural14t);
+        $('#rigidoRuralM14t').val(constantes.rigidoruralm14t);
+        $('#rigidoInterurbano14t').val(constantes.rigidointerurbano14t);
+        $('#rigidoInterurbanoM14t').val(constantes.rigidointerurbanom14t);
+        $('#articuladoUrbano34t').val(constantes.articuladourbano34t);
+        $('#articuladoUrbanoM34t').val(constantes.articuladourbanom34t);
+        $('#articuladoRural34t').val(constantes.articuladorural34t);
+        $('#articuladoRuralM34t').val(constantes.articuladoruralm34t);
+        $('#articuladoInterurbano34t').val(constantes.articuladointerurbano34t);
+        $('#articuladoInterurbanoM34t').val(constantes.articuladointerurbanom34t);
+        // lIGERO
+        $('#CualquieraUrbanoGasolina').val(constantes.cualquierainterurbanogasolina);
+        $('#CualquieraRuralGasolina').val(constantes.cualquieraruralgasolina);
+        $('#CualquieraInterurbanoGasolina').val(constantes.cualquierainterurbanogasolina);
+        $('#CualquieraUrbanoDiesel').val(constantes.cualquieraurbanodiesel);
+        $('#CualquieraRuralDiesel').val(constantes.cualquieraruraldiesel);
+        $('#CualquieraInterurbanoDiesel').val(constantes.cualquierainterurbanodiesel);
+
+        // Motocicleta
+        $('#2tiemposUrbano').val(constantes._2tiemposurbano);
+        $('#2tiemposRural').val(constantes._2tiemposrural);
+        $('#2tiemposInterurbano').val(constantes._2tiemposinterurbano);
+        $('#4tiempos250Urbano').val(constantes._4tiempos250urbano);
+        $('#4tiempos250Rural').val(constantes._4tiempos250rural);
+        $('#4tiempos250Interurbano').val(constantes._4tiempos250interurbano);
+        $('#4tiempos250750Urbano').val(constantes._4tiempos250750urbano);
+        $('#4tiempos250750Rural').val(constantes._4tiempos250750rural);
+        $('#4tiempos250750Interurbano').val(constantes._4tiempos250750interurbano);
+        $('#4tiempos750Urbano').val(constantes._4tiempos750urbano);
+        $('#4tiempos750Rural').val(constantes._4tiempos750rural);
+        $('#4tiempos750Interurbano').val(constantes._4tiempos750interurbano);
+
+    };
+  }
   function medidas(){
     // conversion en unidades energeticas
     // termia
@@ -46,54 +226,14 @@
 
   }
 
-  function valorPorDefecto () {
-    /*
-    Aplicamos los valores por defecto para las constantes
-    */
-    //GWP
-      $("#CO2").val(1);
-      $("#CH4").val(25);
-      $("#N2O").val(298);
-      $("#PFC").val(12200);
-      $("#HFC").val(14800);
-      $("#SF6").val(23000);
-
-      //Papel
-      $("#papelcomun").val(3);
-      $("#papelreciclado").val(1.8);
-
-      // biomasa solida primaria
-      $("#CO2Biomasa").val(100000);
-      $("#CH4Biomasa").val(30);
-      $("#N2OBiomasa").val(4);
-
-      // combustibles
-      $('#gasNatural').val(2.537);
-      $('#gasoleo').val(3.233);
-
-      // Transporte
-      $('#gasolina98_95').val(2.38);
-      $('#gasoleoTransporte').val(2.61);
-
-      // Turismos
-      $('#gasolinaUrbano14').val(192.12);
-      $('#gasolinaUrbano1.4-2.011').val(232.78);
-      $('#gasolinaUrbano>2.011').val(310.19);
-      $('#gasolinaRural<14').val(136.90);
-      $('#gasolinaRural1.4-2.011').val(159.65);
-      $('#gasolinaRural>2.011').val(191.85);
-      $('#gasolinaInterurbano<14').val(154.18);
-      $('#gasolinaInterurbano1.4-2.011').val(170.99);
-      $('#gasolinaInterurbano>2.011').val(217.95);
-      $('#dieselUrbano<21').val(199.81);
-      $('#dieselUrbano>21').val(246.06);
-      $('#dieselRural<21').val(135.56);
-      $('#dieselRural>21').val(170.51);
-      $('#dieselInterurbano<21').val(157.73);
-      $('#dieselInterurbano>21').val(198.71);
-      $('#CualquieraUrbano').val(103.43);
-      $('#CualquieraRural').val(100.13);
-      $('#CualquieraInterurbano').val(127.29);
-
-
+  function validar () {
+    var bandera = true;
+    $('input').each(function(){
+      if(isNaN($(this).val())){
+        $(this).focus();
+        bandera = false;
+        return false;
+      }
+    });
+    return bandera;
   }
