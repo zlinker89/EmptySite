@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset=utf-8>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/iconos.css"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <div class="container">
+        <header class="col row s12">
+          <!-- Dropdown Structure -->
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+          </ul>
+          <nav>
+            <div class="nav-wrapper green lighten-1">
+              <a  class="brand-logo">Logo</a>
+              <!-- activate side-bav in mobile view -->
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
+                <li><a href="config.html"><i class="material-icons right">build</i>Configuración</a></li>
+              </ul>
+              <!-- navbar for mobile -->
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="config.html">Configuración</a></li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <section class="col row s12">
+          <div class="col row s12">
+            <div class="col s12 teal darken-4">
+                    <div class="col row s4 m3 l2 center opciones">
+                      <a href="papel.html">
+                        <span class="white-text"><i class="medium material-icons">library_books</i></span><br>
+                        <span class="white-text">Papel</span>
+                      </a>
+                    </div>
+                    <div class="col row s4 m3 l2 center opciones">
+                      <a href="co2e.html">
+                        <span class="white-text"><i class="medium material-icons">wb_sunny</i></span><br>
+                        <span class="white-text">CO<sub>2e</sub></span>
+                      </a>
+                    </div>
+                    <div class="col row s4 m3 l2 center opciones">
+                      <a href="combustionEstacionaria.html">
+                        <span class="white-text"><i class="medium material-icons">pin_drop</i></span><br>
+                        <span class="white-text">Combustión Estacionaria</span>
+                      </a>
+                    </div>
+                    <div class="col row s4 m3 l2 center opciones">
+                      <a href="combustionMovil.html">
+                        <span class="white-text"><i class="medium material-icons">directions_bus</i></span><br>
+                        <span class="white-text">Combustión Movil</span>
+                      </a>
+                    </div>
+                    <div class="col row s4 m3 l2 center opciones">
+                      <a href="electricidad.html">
+                        <span class="white-text"><i class="medium material-icons">flash_on</i></span><br>
+                        <span class="white-text">Electricidad</span>
+                      </a>
+                    </div>
+            </div>
+          </div>
+        </section>
+        <div class="col row s12"></div>
+      </div>
+
+     <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <!--Mis scripts-->
+      <script type="text/javascript" src="js/obtenerDatos.js"></script>
+      <script type="text/javascript" src="js/verificarLocalStorage.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+    </body>
+  </html>
